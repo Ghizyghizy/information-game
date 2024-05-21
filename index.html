@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Sharing Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Information Sharing Game</h1>
+        <div id="welcome-screen" class="screen">
+            <h2>Welcome!</h2>
+            <p>Please enter your details to start the game.</p>
+            <form id="demographic-form">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required><br><br>
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender" required><br><br>
+                <label for="ethnicity">Ethnicity:</label>
+                <input type="text" id="ethnicity" name="ethnicity" required><br><br>
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" name="occupation" required><br><br>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required><br><br>
+                <button type="submit">Start Game</button>
+            </form>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <h2 id="scenario-title">Scenario</h2>
+            <p id="scenario-description">Description of the scenario.</p>
+            <div class="profiles">
+                <div class="profile-card" id="profile-a">
+                    <img src="profile_a.jpg" alt="Profile A">
+                    <p>John, Professional and Approachable</p>
+                    <button onclick="shareInfo('Profile A')">Share</button>
+                </div>
+                <div class="profile-card" id="profile-b">
+                    <img src="profile_b.jpg" alt="Profile B">
+                    <p>Emily, Friendly and Casual</p>
+                    <button onclick="shareInfo('Profile B')">Share</button>
+                </div>
+                <div class="profile-card" id="profile-c">
+                    <img src="profile_c.jpg" alt="Profile C">
+                    <p>Profile C, Age: 30</p>
+                    <button onclick="shareInfo('Profile C')">Share</button>
+                </div>
+                <div class="profile-card" id="profile-d">
+                    <img src="profile_d.jpg" alt="Profile D">
+                    <p>Anonymous</p>
+                    <button onclick="shareInfo('Profile D')">Share</button>
+                </div>
+            </div>
+            <button onclick="nextScenario()">Next Scenario</button>
+        </div>
+
+        <div id="end-screen" class="screen hidden">
+            <h2>Thank you for participating!</h2>
+            <p>Your responses have been recorded.</p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
